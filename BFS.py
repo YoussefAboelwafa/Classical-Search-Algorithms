@@ -2,7 +2,7 @@ def bfs(graph, start, goal):
     visited = []
     queue = [[start]]
     while queue:
-        path = queue.pop(0)
+        path = queue.pop(0) # Difference from DFS
         node = path[-1]
         if node not in visited:
             visited.append(node)
