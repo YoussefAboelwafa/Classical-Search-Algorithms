@@ -8,7 +8,7 @@ def ucs(graph, start, goal):
     visited = []
     queue = [[(start, 0)]]
     while queue:
-        queue.sort(key=path_h_cost) # Difference from A*
+        queue.sort(key=path_h_cost)  # Difference from A*
         path = queue.pop(0)
         node = path[-1][0]
         if node not in visited:

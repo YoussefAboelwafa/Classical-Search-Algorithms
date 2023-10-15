@@ -2,7 +2,8 @@ def dfs(graph, start, goal):
     visited = []
     stack = [[start]]
     while stack:
-        path = stack.pop()
+        # pop from the back of the queue
+        path = stack.pop()  # Difference from BFS
         node = path[-1]
         if node not in visited:
             visited.append(node)

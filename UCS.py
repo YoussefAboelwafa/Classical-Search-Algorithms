@@ -1,6 +1,6 @@
 def path_cost(path):
     cost = 0
-    for (node, weight) in path:
+    for node, weight in path:
         cost += weight
     return cost
 
@@ -9,7 +9,7 @@ def ucs(graph, start, goal):
     visited = []
     queue = [[(start, 0)]]
     while queue:
-        queue.sort(key=path_cost)
+        queue.sort(key=path_cost)  # Difference from Greedy
         path = queue.pop(0)
         node = path[-1][0]
         if node not in visited:
@@ -17,7 +17,7 @@ def ucs(graph, start, goal):
             if node == goal:
                 return path
             neighbours = graph.get(node, [])
-            for (neighbour, cost) in neighbours:
+            for neighbour, cost in neighbours:
                 new_path = path.copy()
                 new_path.append((neighbour, cost))
                 queue.append(new_path)
